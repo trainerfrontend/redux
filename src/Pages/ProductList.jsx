@@ -1,14 +1,13 @@
-// to dispatch any action from UI
-import { useDispatch } from "react-redux";
-import { add } from '../store/CartSlice';
+import { CartContext } from "../Context/CartContext";
+import { useContext } from "react";
+
 
 const ProductList = ({ products }) => {
-    const dispatch = useDispatch();
+    const { cart, addToCart } = useContext(CartContext);
 
     const createList = () => {
         const addHandler = (product) => {
-            console.log(product);
-            dispatch(add(product))
+            addToCart(product)
         }
 
         return products.map((product, index) => {

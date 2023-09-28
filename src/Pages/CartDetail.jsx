@@ -1,19 +1,15 @@
-import { useSelector, useDispatch } from "react-redux";
-import { remove } from "../store/CartSlice";
+import { CartContext } from "../Context/CartContext";
+import { useContext } from "react";
+
 
 const CartDetail = () => {
-    const dispatch = useDispatch();
-    const products = useSelector(state => state.cart);
-
-    const removeItemHandler = (productId) => {
-        dispatch(remove(productId))
-    }
+    const { cart, removeFromCart } = useContext(CartContext);
 
     const createProductList = () => {
-        return products.map((item) => {
+        return cart.map((item) => {
             return <div>
                 <h1>{item.title}</h1>
-                <button onClick={() => removeItemHandler(item.id)}>remove</button>
+                <button onClick={() => removeFromCart(item.id)}>remove</button>
             </div>
         })
     }
