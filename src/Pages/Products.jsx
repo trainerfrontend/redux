@@ -10,7 +10,15 @@ const Products = () => {
         dispatch(fetchProducts())
     }, [])
 
-    const { data } = useSelector(state => state.product)
+    const { data, status } = useSelector(state => state.product);
+
+    if (status == "loading") {
+        return <h2>Loading....</h2>
+    }
+
+    if (status == "error") {
+        return <h2>error....</h2>
+    }
 
     return <ProductList products={data} />
 }
