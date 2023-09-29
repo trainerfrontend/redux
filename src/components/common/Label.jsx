@@ -1,5 +1,5 @@
 const Label = ({ labelName }) => {
-    return <label>{labelName}</label>
+    return <label className="mr-4">{labelName}</label>
 }
 
 export default Label

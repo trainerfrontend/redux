@@ -7,8 +7,6 @@ import Form from './components/global/Form'
 function App() {
   return (
     <div className="container mx-auto">
-      This is home
-      <Parent />
       <Form />
     </div>
   );
