@@ -14,17 +14,21 @@ const Form = () => {
             }
         ))
     }
+
+    const submitHandler = () => {
+        console.log('click')
+    }
     return <>
         <h1>{form && JSON.stringify(form)}</h1>
         <div className='my-2'>
-            <Label labelName="Enter your Name" />
-            <Input type="text" name="fullname" handler={getFormData} />
+            <Label htmlfor="fname" labelName="Enter your Name" />
+            <Input id="fname" type="text" name="fullname" handler={getFormData} />
         </div>
         <div>
-            <Label labelName="Enter your email" />
-            <Input type="email" name="email" handler={getFormData} />
+            <Label htmlfor="email" labelName="Enter your email" />
+            <Input id="email" type="email" name="email" handler={getFormData} />
         </div>
-        <Button />
+        <Button buttonLabel="submit" onSubmit={submitHandler} />
     </>
 }
 
