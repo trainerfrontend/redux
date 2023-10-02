@@ -24,10 +24,9 @@ describe("<Form/>", () => {
         });
 
         fireEvent.submit(getByText('submit'))
-        //const formData = screen.getByText('{ "fullname": "John", "email": "john@gmail.com" }')
-        await waitFor(() => {
-            expect(getByText('{"fullname":"John","email":"john@gmail.com"}')).toBeInTheDocument();
-        })
+        // const formData = screen.getByText('{ "fullname": "John", "email": "john@gmail.com" }')
+        expect(getByText('{"fullname":"John","email":"john@gmail.com"}')).toBeInTheDocument();
+
 
     })
 
