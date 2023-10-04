@@ -1,5 +1,5 @@
 export const NAV = [{
-    name: "home",
+    name: "Welcome",
     link: "/"
 },
 {
